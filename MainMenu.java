@@ -127,13 +127,13 @@ public class MainMenu {
                     System.out.println("Vector ordenado");
                     break;
                 case "7":
-                    objVec.testSequentialSearchTime(input);
+                    objVec.searchSequential(input);
                     break;
                 case "8":
-                    objVec.testBinarySearchTime(input);
+                    objVec.testBinary(input);
                     break;
                 case "9":
-                    objVec.testSortingTimes(input);
+                    objVec.sortingTimes(input);
                     break;
                 case "s":
                     break;

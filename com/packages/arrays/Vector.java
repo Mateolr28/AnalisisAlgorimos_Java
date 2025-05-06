@@ -94,7 +94,7 @@ public class Vector {
         }
     }
 
-    public void testSequentialSearchTime(Scanner input) {
+    public void searchSequential(Scanner input) {
         System.out.print("Ingrese el tamaño del vector: ");
         n = input.nextInt();
 
@@ -119,10 +119,10 @@ public class Vector {
 
         System.out.println("Dato encontrado en posición: " + r);
         System.out.println("Tiempo de búsqueda secuencial: " + (fin - inicio) + " ns");
-        System.out.println("Complejidades -> Omín: O(1), Oprom: O(n), Omáx: O(n)");
+        System.out.println("Complejidades -> min: O(1), prom: O(n), max: O(n)");
     }
 
-    public void testBinarySearchTime(Scanner input) {
+    public void testBinary(Scanner input) {
         System.out.print("Ingrese el tamaño del vector: ");
         n = input.nextInt();
 
@@ -152,14 +152,14 @@ public class Vector {
 
         System.out.println("Dato encontrado en posición: " + r);
         System.out.println("Tiempo de búsqueda binaria: " + (fin - inicio) + " ns");
-        System.out.println("Complejidades -> Omín: O(1), Oprom: O(log n), Omáx: O(log n)");
+        System.out.println("Complejidades -> min: O(1), prom: O(log n), max: O(log n)");
     }
 
-    public void testSortingTimes(Scanner input) {
+    public void sortingTimes(Scanner input) {
         System.out.print("Ingrese el tamaño del vector: ");
         n = input.nextInt();
 
-        // Crear una copia base del vector original aleatorio
+        // Vector
         int[] original = new int[n];
         for (int i = 0; i < n; i++) {
             original[i] = (int) (Math.random() * 201 - 100);
@@ -170,26 +170,26 @@ public class Vector {
         long start = System.nanoTime();
         sortBubble();
         long end = System.nanoTime();
-        System.out.println("Tiempo ordenamiento burbuja: " + (end - start) + " ns");
+        System.out.println("Tiempo burbuja: " + (end - start) + " ns");
 
         // Inserción
         System.arraycopy(original, 0, vec, 0, n);
         start = System.nanoTime();
         sortInsertion();
         end = System.nanoTime();
-        System.out.println("Tiempo ordenamiento inserción: " + (end - start) + " ns");
+        System.out.println("Tiempo insercion: " + (end - start) + " ns");
 
         // Selección
         System.arraycopy(original, 0, vec, 0, n);
         start = System.nanoTime();
         sortSelection();
         end = System.nanoTime();
-        System.out.println("Tiempo ordenamiento selección: " + (end - start) + " ns");
+        System.out.println("Tiempo seleccion: " + (end - start) + " ns");
 
         System.out.println("Complejidades:");
-        System.out.println("- Burbuja     -> Omín: O(n), Oprom: O(n²), Omáx: O(n²)");
-        System.out.println("- Inserción   -> Omín: O(n), Oprom: O(n²), Omáx: O(n²)");
-        System.out.println("- Selección   -> Omín: O(n²), Oprom: O(n²), Omáx: O(n²)");
+        System.out.println("- Burbuja     -> min: O(n), prom: O(n²), max: O(n²)");
+        System.out.println("- Insercion   -> min: O(n), prom: O(n²), max: O(n²)");
+        System.out.println("- Seleccion   -> min: O(n²), prom: O(n²), max: O(n²)");
     }
 
 }

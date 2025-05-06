@@ -105,10 +105,10 @@ public class Vector {
         System.out.println("Vector generado:");
         showVector();
 
-        System.out.print("Ingrese un número a insertar: ");
+        System.out.print("Ingrese un numero a insertar: ");
         int dato = input.nextInt();
 
-        System.out.print("Ingrese la posición donde insertarlo (0 a " + (n - 1) + "): ");
+        System.out.print("Ingrese la posicion donde insertarlo (0 a " + (n - 1) + "): ");
         int pos = input.nextInt();
 
         vec[pos] = dato;
@@ -117,9 +117,14 @@ public class Vector {
         int r = searchSecuencial(dato);
         long fin = System.nanoTime();
 
-        System.out.println("Dato encontrado en posición: " + r);
+        System.out.println("Dato encontrado en posicion: " + r);
         System.out.println("Tiempo de búsqueda secuencial: " + (fin - inicio) + " ns");
         System.out.println("Complejidades -> min: O(1), prom: O(n), max: O(n)");
+
+        // Memoria usada
+        int memoriaBytes = n * Integer.BYTES;
+        double memoriaMB = memoriaBytes / (1024.0 * 1024.0);
+        System.out.printf("\nMemoria estimada del vector: %d bytes (%.2f MB)\n", memoriaBytes, memoriaMB);
     }
 
     public void testBinary(Scanner input) {
@@ -150,9 +155,15 @@ public class Vector {
         int r = searchBinary(dato);
         long fin = System.nanoTime();
 
-        System.out.println("Dato encontrado en posición: " + r);
-        System.out.println("Tiempo de búsqueda binaria: " + (fin - inicio) + " ns");
+        System.out.println("Dato encontrado en posicion: " + r);
+        System.out.println("Tiempo de busqueda binaria: " + (fin - inicio) + " ns");
         System.out.println("Complejidades -> min: O(1), prom: O(log n), max: O(log n)");
+
+        // Memoria usada
+        int memoriaBytes = n * Integer.BYTES;
+        double memoriaMB = memoriaBytes / (1024.0 * 1024.0);
+        System.out.printf("\nMemoria estimada del vector: %d bytes (%.2f MB)\n", memoriaBytes, memoriaMB);
+
     }
 
     public void sortingTimes(Scanner input) {
@@ -190,6 +201,11 @@ public class Vector {
         System.out.println("- Burbuja     -> min: O(n), prom: O(n²), max: O(n²)");
         System.out.println("- Insercion   -> min: O(n), prom: O(n²), max: O(n²)");
         System.out.println("- Seleccion   -> min: O(n²), prom: O(n²), max: O(n²)");
+
+        // Memoria usada
+        int memoriaBytes = n * Integer.BYTES;
+        double memoriaMB = memoriaBytes / (1024.0 * 1024.0);
+        System.out.printf("\nMemoria estimada del vector: %d bytes (%.2f MB)\n", memoriaBytes, memoriaMB);
     }
 
 }
